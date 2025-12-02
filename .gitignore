@@ -1,0 +1,9 @@
+datasets/
+ppe_training/
+runs/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+*.zip
+datasets.zip

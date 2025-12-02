@@ -1,0 +1,5 @@
+ultralytics
+opencv-python
+datasets
+tqdm
+pyyaml
