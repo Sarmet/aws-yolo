@@ -7,10 +7,11 @@ Detectare echipament de protecție (căști, mănuși, ochelari, etc.) cu YOLO11
 ### 1. Instalare dependențe
 ```bash
 pip install ultralytics opencv-python matplotlib
+sau pip install -r requirements.txt
 ```
 
 ### 2. Rulare notebook
-Deschide `validation.ipynb` și rulează toate celulele (Run All).
+Deschide `validation_fixed.ipynb` și rulează toate celulele (Run All).
 
 **Ce vei vedea:**
 - Model încărcat: `yolo11_balanced` (antrenat pe 2147 imagini cu căști)
