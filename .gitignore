@@ -1,9 +1,43 @@
+# Datasets și imagini mari
 datasets/
+demo_images/
+validation_samples/
+temp_pack_for_s3/
+
+# Outputs training
 ppe_training/
 runs/
+yolo_run/
+
+# Modele antrenate (mari)
+*.pt
+*.pth
+*.tar.gz
+model.tar.gz
+best.pt
+last.pt
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+.venv*/
+.venv-sagemaker/
+
+# Jupyter
 .ipynb_checkpoints/
+*.ipynb
+
+# IDE
 .vscode/
+.idea/
+
+# Archives
 *.zip
 datasets.zip
+data.zip
+sourcedir.tar.gz
+
+# AWS credentials (safety)
+.aws/
+credentials

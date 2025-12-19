@@ -1,0 +1,55 @@
+{
+  "TrainingJobName": "yolo-test-20251219-190151",
+  "RoleArn": "arn:aws:iam::881839984863:role/SageMakerExecutionRole",
+  "AlgorithmSpecification": {
+    "TrainingImage": "763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-training:2.1.0-gpu-py310",
+    "TrainingInputMode": "File",
+    "EnableSageMakerMetricsTimeSeries": false
+  },
+  "InputDataConfig": [
+    {
+      "ChannelName": "training",
+      "DataSource": {
+        "S3DataSource": {
+          "S3DataType": "S3Prefix",
+          "S3Uri": "s3://radu-yolo-data/data.zip",
+          "S3DataDistributionType": "FullyReplicated"
+        }
+      }
+    },
+    {
+      "ChannelName": "code",
+      "DataSource": {
+        "S3DataSource": {
+          "S3DataType": "S3Prefix",
+          "S3Uri": "s3://radu-yolo-data/code/",
+          "S3DataDistributionType": "FullyReplicated"
+        }
+      }
+    }
+  ],
+  "OutputDataConfig": {
+    "S3OutputPath": "s3://radu-yolo-data/output"
+  },
+  "ResourceConfig": {
+    "InstanceType": "ml.m5.large",
+    "InstanceCount": 1,
+    "VolumeSizeInGB": 30
+  },
+  "StoppingCondition": {
+    "MaxRuntimeInSeconds": 900
+  },
+  "HyperParameters": {
+    "sagemaker_program": "train_entrypoint.py",
+    "sagemaker_submit_directory": "s3://radu-yolo-data/code/sourcedir.tar.gz",
+    "epochs": "1",
+    "imgsz": "640",
+    "batch": "8",
+    "max_images": "200"
+  },
+  "CheckpointConfig": {
+    "S3Uri": "s3://radu-yolo-data/checkpoints"
+  },
+  "EnableNetworkIsolation": false,
+  "EnableInterContainerTrafficEncryption": false
+}
