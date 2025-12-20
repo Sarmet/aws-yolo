@@ -1,3 +1,9 @@
+"""Upload PPE detection dataset to S3 for SageMaker training.
+
+This script packages datasets and demo images into a zip archive
+and uploads to the configured S3 bucket for use in SageMaker training jobs.
+"""
+
 import boto3
 import shutil
 import os
@@ -9,6 +15,21 @@ TEMP_DIR = 'temp_pack_for_s3'
 ARCHIVE_NAME = 'data' # va rezulta data.zip
 
 def main():
+    """Package and upload training data to S3.
+    
+    Process:
+        1. Verify or create S3 bucket in us-east-1
+        2. Copy datasets/ and demo_images/ to temporary directory
+        3. Create zip archive from temporary directory
+        4. Upload zip archive to S3 bucket
+        5. Clean up temporary files
+    
+    The resulting archive is uploaded to s3://radu-yolo-data/data.zip
+    and can be used as input for SageMaker training jobs.
+    
+    Raises:
+        Exception: If bucket creation, archiving, or upload fails
+    """
     s3 = boto3.client('s3', region_name=REGION)
 
     # 1. Creare Bucket

@@ -1,7 +1,17 @@
 #!/usr/bin/env python
-"""
-Script simplu pentru lansarea job-ului SageMaker YOLO.
-Rulează cu: python launch_sagemaker_job.py
+"""Launch SageMaker training job for YOLO model.
+
+Configures and launches a PyTorch-based SageMaker training job with
+spot instances for cost optimization. Uses CPU instance (ml.m5.large)
+for quick smoke testing.
+
+Usage:
+    python launch_sagemaker_job.py
+
+Configuration:
+    BUCKET: S3 bucket containing training data
+    REGION: AWS region for training job
+    ROLE: IAM role ARN with SageMaker execution permissions
 """
 
 import sagemaker

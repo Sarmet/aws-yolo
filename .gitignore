@@ -39,6 +39,9 @@ datasets.zip
 data.zip
 sourcedir.tar.gz
 
+# MkDocs build output
+site/
+
 # AWS credentials (safety)
 .aws/
 credentials

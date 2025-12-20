@@ -2,26 +2,13 @@
 
 ## Training Scripts
 
-### `train_yolo11.py`
+### train_yolo11.py
 
 Main training script for full dataset.
 
-```python
-from ultralytics import YOLO
-
-model = YOLO('yolo11n.pt')
-
-results = model.train(
-    data='data_balanced.yaml',
-    epochs=50,
-    imgsz=640,
-    batch=16,
-    name='yolo11_balanced',
-    device=0,
-    workers=8,
-    patience=10
-)
-```
+::: train_yolo11.main
+    options:
+      show_source: true
 
 **Usage:**
 ```bash
@@ -84,22 +71,13 @@ python train_entrypoint.py \
 
 ## Data Management Scripts
 
-### `upload_data_s3.py`
+### upload_data_s3.py
 
 Upload dataset to S3 for SageMaker training.
 
-```python
-import boto3
-
-s3 = boto3.client('s3')
-
-# Upload dataset
-s3.upload_file(
-    'datasets/ppe_balanced/...',
-    'your-bucket',
-    'datasets/ppe_balanced/...'
-)
-```
+::: upload_data_s3.main
+    options:
+      show_source: true
 
 **Usage:**
 ```bash
@@ -127,32 +105,14 @@ python prepare_repo.py
 
 ## SageMaker Deployment Scripts
 
-### `launch_sagemaker_job.py`
+### launch_sagemaker_job.py
 
 Launch SageMaker training job via Python SDK.
 
-```python
-import sagemaker
-from sagemaker.pytorch import PyTorch
-
-estimator = PyTorch(
-    entry_point='train_entrypoint.py',
-    role=sagemaker_role,
-    instance_type='ml.g4dn.2xlarge',
-    instance_count=1,
-    framework_version='2.0.0',
-    py_version='py310',
-    hyperparameters={
-        'epochs': 50,
-        'batch': 16,
-        'imgsz': 640
-    }
-)
-
-estimator.fit({
-    'training': 's3://bucket/datasets/ppe_balanced/'
-})
-```
+::: launch_sagemaker_job
+    options:
+      show_source: false
+      members: false
 
 **Usage:**
 ```bash
