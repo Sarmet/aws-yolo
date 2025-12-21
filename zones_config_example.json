@@ -1,0 +1,54 @@
+{
+  "image_reference": "demo_images/construction_site.jpg",
+  "image_size": {
+    "width": 1920,
+    "height": 1080
+  },
+  "zones": [
+    {
+      "id": "zone_danger",
+      "name": "Zona Periculoasă",
+      "polygon": [
+        [100, 200],
+        [500, 200],
+        [600, 800],
+        [50, 800]
+      ],
+      "rules": {
+        "ppe_required": ["helmet", "vest"],
+        "max_dwell_time": null,
+        "restricted_access": false
+      }
+    },
+    {
+      "id": "zone_restricted",
+      "name": "Zonă Acces Interzis",
+      "polygon": [
+        [1200, 100],
+        [1800, 100],
+        [1800, 600],
+        [1200, 600]
+      ],
+      "rules": {
+        "ppe_required": ["helmet", "vest", "gloves"],
+        "max_dwell_time": 180,
+        "restricted_access": true
+      }
+    },
+    {
+      "id": "zone_loading",
+      "name": "Zonă Încărcare",
+      "polygon": [
+        [700, 400],
+        [1100, 400],
+        [1100, 900],
+        [700, 900]
+      ],
+      "rules": {
+        "ppe_required": ["helmet", "vest"],
+        "max_dwell_time": 300,
+        "restricted_access": false
+      }
+    }
+  ]
+}
