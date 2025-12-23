@@ -11,7 +11,7 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/USERNAME/REPO.git
+git clone https://github.com/Sarmet/aws-yolo.git
 cd aws-yolo
 ```
 
@@ -39,7 +39,7 @@ aws configure
 Provide:
 - AWS Access Key ID
 - AWS Secret Access Key
-- Default region (e.g., `eu-central-1`)
+- Default region (e.g., `us-east-1`)
 - Output format: `json`
 
 ### Verify AWS Connection

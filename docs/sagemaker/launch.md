@@ -8,9 +8,12 @@
 .\launch_sagemaker_cli.ps1
 ```
 
-### Method 2: Python Script
+### Method 2: Python Script (temporarily not working)
+
+> Note: `launch_sagemaker_job.py` currently fails because a required PyTorch package cannot be installed in this environment. Use the PowerShell script above instead.
 
 ```bash
+# not working currently
 python launch_sagemaker_job.py
 ```
 
@@ -32,7 +35,8 @@ aws s3 ls s3://YOUR-BUCKET/datasets/ppe_balanced/
 3. **Launch Training**
 
 ```bash
-python launch_sagemaker_job.py
+# Use the PowerShell variant (Python script is blocked by missing PyTorch dependency)
+./launch_sagemaker_cli.ps1
 ```
 
 Expected output:

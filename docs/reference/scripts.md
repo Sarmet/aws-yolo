@@ -124,6 +124,8 @@ python launch_sagemaker_job.py
 - `training_job_config.json` configured
 - Dataset uploaded to S3
 
+**Status:** Currently not working here because a required PyTorch dependency could not be installed; use `launch_sagemaker_cli.ps1` instead.
+
 ### `launch_sagemaker_cli.ps1`
 
 PowerShell script for Windows users.

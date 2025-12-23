@@ -55,3 +55,11 @@ ppe_detection_yolo/
 005399_jpg...: helmet (0.89), helmet (0.43)
 005424_jpg...: no_helmet (0.87), no_helmet (0.87), ...
 ```
+
+## SageMaker launch (status)
+
+- `launch_sagemaker_job.py` nu poate fi rulat aici din cauza unui pachet PyTorch care nu se instalează; folosește scriptul PowerShell: `./launch_sagemaker_cli.ps1`.
+- După modificări în documentație, reconstruiește și urcă site-ul docs (regiune us-east-1):
+	- `mkdocs build`
+	- `aws s3 sync site/ s3://<bucket-docs> --region us-east-1 --delete`
+- Opțional, fă commit și push în git după ce actualizezi docs.

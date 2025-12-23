@@ -170,7 +170,7 @@ Store sensitive configuration:
 # AWS Configuration
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_REGION=eu-central-1
+AWS_REGION=us-east-1
 
 # S3 Configuration
 S3_BUCKET=your-bucket-name
@@ -260,7 +260,7 @@ jobs:
           S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
         run: |
           pip install awscli
-          aws s3 sync site/ s3://$S3_BUCKET --region eu-central-1 --delete
+          aws s3 sync site/ s3://$S3_BUCKET --region us-east-1 --delete
       
       - name: Invalidate CloudFront
         if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}

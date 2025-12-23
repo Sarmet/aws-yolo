@@ -1,0 +1,38 @@
+{
+  "image_reference": "demo_images\\005302_jpg.rf.6f3709a257117249dc503de98fcb5f5d.jpg",
+  "image_size": {
+    "width": 455,
+    "height": 600
+  },
+  "zones": [
+    {
+      "id": "zone_1",
+      "name": "test",
+      "polygon": [
+        [
+          93,
+          49
+        ],
+        [
+          33,
+          165
+        ],
+        [
+          186,
+          270
+        ],
+        [
+          319,
+          136
+        ]
+      ],
+      "rules": {
+        "ppe_required": [
+          "helmet"
+        ],
+        "max_dwell_time": 360,
+        "restricted_access": true
+      }
+    }
+  ]
+}

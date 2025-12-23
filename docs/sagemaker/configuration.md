@@ -115,7 +115,7 @@ Your IAM role needs:
 Set these before launching:
 
 ```bash
-export AWS_REGION=eu-central-1
+export AWS_REGION=us-east-1
 export S3_BUCKET=your-bucket-name
 export SAGEMAKER_ROLE=arn:aws:iam::ACCOUNT:role/SageMakerRole
 ```
